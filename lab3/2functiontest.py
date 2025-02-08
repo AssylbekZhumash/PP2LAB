@@ -2,7 +2,7 @@
 def is_highly_rated(movie):
     return movie["imdb"] > 5.5
 
-# 2. фильмы с рейтингом выше 5.5
+# 2.
 def high_rated_movies(movies):
     return [movie for movie in movies if movie["imdb"] > 5.5]
 
