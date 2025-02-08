@@ -19,6 +19,6 @@ movies = [
 
 print(is_highly_rated(movies[0]))  # True
 print(high_rated_movies(movies))  # Все фильмы с рейтингом > 5.5
-print(movies_by_category(movies, "Romance"))  # Все фильмы в категории Romance
+print(movies_by_category(movies, "Romance"))  # Все фильмы в Romance
 print(average_imdb(movies))  # Средний рейтинг всех фильмов
-print(average_imdb_by_category(movies, "Romance"))  # Средний рейтинг категории Romance
+print(average_imdb_by_category(movies, "Romance"))  # Средний рейтинг Romance
