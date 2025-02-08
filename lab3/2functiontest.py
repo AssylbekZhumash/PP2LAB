@@ -1,3 +1,27 @@
+# 1. Проверка, имеет ли фильм рейтинг выше 5.5
+def is_highly_rated(movie):
+    return movie["imdb"] > 5.5
+
+# 2. Получение списка фильмов с рейтингом выше 5.5
+def high_rated_movies(movies):
+    return [movie for movie in movies if movie["imdb"] > 5.5]
+
+# 3. Получение фильмов по категории
+def movies_by_category(movies, category):
+    return [movie for movie in movies if movie["category"] == category]
+
+# 4. Средний рейтинг всех фильмов
+def average_imdb(movies):
+    if not movies:
+        return 0
+    return sum(movie["imdb"] for movie in movies) / len(movies)
+
+# 5. Средний рейтинг фильмов по категории
+def average_imdb_by_category(movies, category):
+    category_movies = movies_by_category(movies, category)
+    return average_imdb(category_movies)
+
+
 movies = [
     {"name": "Usual Suspects", "imdb": 7.0, "category": "Thriller"},
     {"name": "Hitman", "imdb": 6.3, "category": "Action"},
