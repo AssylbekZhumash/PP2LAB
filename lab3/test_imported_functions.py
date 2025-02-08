@@ -27,9 +27,5 @@ def test_imported_functions():
     print("Histogram for [4, 9, 7]:")
     histogram([4, 9, 7])
 
-# Uncomment to run the guess the number game
-# from guess_the_number import guess_the_number
-# guess_the_number()
 
-# Run test functions
 test_imported_functions()
