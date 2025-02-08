@@ -1,6 +1,6 @@
 import math
 
-# 1. Класс для работы со строками
+# 1. 
 class StringManipulator:
     def __init__(self):
         self.string = ""
@@ -11,7 +11,7 @@ class StringManipulator:
     def printString(self):
         print(self.string.upper())
 
-# 2. Классы Shape и Square
+# 2.
 class Shape:
     def area(self):
         return 0
@@ -23,7 +23,7 @@ class Square(Shape):
     def area(self):
         return self.length ** 2
 
-# 3. Класс Rectangle (наследуется от Shape)
+# 3. 
 class Rectangle(Shape):
     def __init__(self, length, width):
         self.length = length
@@ -32,7 +32,7 @@ class Rectangle(Shape):
     def area(self):
         return self.length * self.width
 
-# 4. Класс Point
+# 4.
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -48,7 +48,7 @@ class Point:
     def dist(self, other_point):
         return math.sqrt((self.x - other_point.x) ** 2 + (self.y - other_point.y) ** 2)
 
-# 5. Класс Account (Банковский счет)
+# 5.
 class Account:
     def __init__(self, owner, balance=0):
         self.owner = owner
@@ -65,7 +65,7 @@ class Account:
             self.balance -= amount
             print(f"Withdrawn {amount}. New balance: {self.balance}")
 
-# 6. Фильтрация простых чисел с filter() и lambda
+# 6.
 def is_prime(n):
     if n < 2:
         return False
@@ -87,25 +87,25 @@ str_obj = StringManipulator()
 str_obj.string = "hello"  
 str_obj.printString()  
 
-# 2. Тест Square
+# 2.
 sq = Square(4)
 print("Square area:", sq.area())  # 16
 
-# 3. Тест Rectangle
+# 3. 
 rect = Rectangle(4, 6)
 print("Rectangle area:", rect.area())  # 24
 
-# 4. Тест Point
+# 4. 
 p1 = Point(1, 2)
 p2 = Point(4, 6)
 p1.show()  # Point(1, 2)
 print("Distance:", p1.dist(p2))  
 
-# 5. Тест Account
+# 5. 
 acc = Account("Alice", 100)
 acc.deposit(50)
 acc.withdraw(30)
-acc.withdraw(200)  # Недостаточно средств
+acc.withdraw(200)  
 
 # 6. 
 print("Prime numbers:", prime_numbers)  
