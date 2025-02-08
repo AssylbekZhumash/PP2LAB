@@ -77,3 +77,35 @@ def is_prime(n):
 numbers = list(range(1, 51))  # Числа от 1 до 50
 prime_numbers = list(filter(lambda x: is_prime(x), numbers))
 print("Prime numbers:", prime_numbers)
+
+
+# Тест
+
+
+str_obj = StringManipulator()
+
+str_obj.string = "hello"  
+str_obj.printString()  
+
+# 2. Тест Square
+sq = Square(4)
+print("Square area:", sq.area())  # 16
+
+# 3. Тест Rectangle
+rect = Rectangle(4, 6)
+print("Rectangle area:", rect.area())  # 24
+
+# 4. Тест Point
+p1 = Point(1, 2)
+p2 = Point(4, 6)
+p1.show()  # Point(1, 2)
+print("Distance:", p1.dist(p2))  
+
+# 5. Тест Account
+acc = Account("Alice", 100)
+acc.deposit(50)
+acc.withdraw(30)
+acc.withdraw(200)  # Недостаточно средств
+
+# 6. 
+print("Prime numbers:", prime_numbers)  
