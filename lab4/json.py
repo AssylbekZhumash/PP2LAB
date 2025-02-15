@@ -1,9 +1,7 @@
 import json
-import os
 
-# Определяем путь к файлу
-desktop = os.path.join(os.path.expanduser("~"), "Desktop")
-file_path = os.path.join(desktop, "lab4", "sample-data.json")
+# Определяем путь к файлу вручную
+file_path = r"C:\Users\Асыл\Desktop\lab4\sample-data.json"
 
 # Открываем JSON-файл и загружаем данные
 with open(file_path, "r", encoding="utf-8") as file:
