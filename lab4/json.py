@@ -2,7 +2,8 @@ import json
 import os
 
 # Определяем путь к файлу
-file_path = r"C:\Users\Асыл\Desktop\lab4\sample-data.json"
+file_path = "lab4/sample-data.json"
+
 
 # Проверяем, существует ли файл
 if not os.path.exists(file_path):
