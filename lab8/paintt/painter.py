@@ -2,24 +2,24 @@ import pygame
 import random
 import sys
 
-# Инициализация Pygame
+
 pygame.init()
 
-# Константы
+
 WIDTH, HEIGHT = 1280, 720
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-BLUE = (0, 150, 255)  # Синяя рамка для выбранного инструмента
+BLUE = (0, 150, 255)  
 
-# Настройка экрана
+
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Paint Program")
 
-# Поверхность для рисования
+
 background = pygame.Surface(screen.get_size())
 background.fill(WHITE)
 
-# Загрузка иконок инструментов
+
 icon_size = (40, 40)
 try:
     pen_icon = pygame.image.load("pen.png")
@@ -36,7 +36,7 @@ try:
     clear_icon = pygame.transform.scale(clear_icon, icon_size)
 except pygame.error:
     print("Warning: Some icons not found! Creating placeholder icons.")
-    # Создаем простые цветные прямоугольники как иконки
+    
     pen_icon = pygame.Surface(icon_size)
     pen_icon.fill((255, 0, 0))
     rect_icon = pygame.Surface(icon_size)
@@ -61,7 +61,7 @@ buttons = {
 
 font = pygame.font.Font(None, 36)
 
-# Переменные состояния
+
 drawing = False
 last_pos = None
 color = BLACK
@@ -72,7 +72,7 @@ start_pos = None
 def get_random_color():
     return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
-# Основной цикл
+
 running = True
 clock = pygame.time.Clock()
 
@@ -82,7 +82,7 @@ while running:
             running = False
         
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:  # Левая кнопка мыши
+            if event.button == 1:  
                 for key, (x, y, icon) in buttons.items():
                     if x <= event.pos[0] <= x + icon_size[0] and y <= event.pos[1] <= y + icon_size[1]:
                         if key == "color":
@@ -136,16 +136,16 @@ while running:
             elif event.key == pygame.K_DOWN:
                 brush_size = max(1, brush_size - 1)
     
-    # Отрисовка
+    
     screen.blit(background, (0, 0))
     
-    # Кнопки инструментов
+    
     for key, (x, y, icon) in buttons.items():
         screen.blit(icon, (x, y))
         if tool == key:
             pygame.draw.rect(screen, BLUE, (x-2, y-2, icon_size[0]+4, icon_size[1]+4), 2)
     
-    # Индикатор цвета и размера кисти
+    
     pygame.draw.rect(screen, color, (WIDTH-50, 10, 40, 40))
     brush_text = font.render(f"Size: {brush_size}", True, BLACK)
     screen.blit(brush_text, (WIDTH-150, 20))

@@ -3,21 +3,21 @@ import random
 
 pygame.init()
 
-# Размер окна
+
 WIDTH, HEIGHT = 1280, 720
 
-# Цвета
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 BLUE = (0, 150, 255)
 
-# Окно и фон
+
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Paint Program")
 background = pygame.Surface(screen.get_size())
 background.fill(WHITE)
 
-# Иконки
+
 icon_size = (40, 40)
 load_icon = lambda name: pygame.transform.scale(pygame.image.load(name), icon_size)
 
@@ -32,7 +32,7 @@ triangle_icon = load_icon("triangle.png")
 eq_triangle_icon = load_icon("equilateral-triangle.png")
 rhombus_icon = load_icon("rhombus.png")
 
-# Панель инструментов
+
 buttons = {
     "pen": (10, 10, pen_icon),
     "rect": (60, 10, rect_icon),
@@ -46,10 +46,10 @@ buttons = {
     "rhombus": (460, 10, rhombus_icon)
 }
 
-# Шрифт
+
 font = pygame.font.Font(None, 36)
 
-# Переменные
+
 drawing = False
 last_pos = None
 color = BLACK
@@ -60,18 +60,18 @@ start_pos = None
 def get_random_color():
     return [random.randint(0, 255) for _ in range(3)]
 
-# Основной цикл
+
 running = True
 while running:
     screen.blit(background, (0, 0))
 
-    # Отрисовка кнопок
+    
     for key, (x, y, icon) in buttons.items():
         screen.blit(icon, (x, y))
         if tool == key:
             pygame.draw.rect(screen, BLUE, (x - 2, y - 2, icon_size[0] + 4, icon_size[1] + 4), 2)
 
-    # События
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -159,10 +159,10 @@ while running:
             elif event.key == pygame.K_DOWN:
                 brush_size = max(1, brush_size - 1)
 
-    # Показ текущего цвета
+    
     pygame.draw.rect(screen, color, (WIDTH - 50, 10, 40, 40))
 
-    # Размер кисти
+    
     brush_text = font.render(f"Size: {brush_size}", True, BLACK)
     screen.blit(brush_text, (WIDTH - 150, 20))
 
